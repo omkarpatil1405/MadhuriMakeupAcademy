@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Madhuri Makeup Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+  scroll-behavior: smooth;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.hero h1, .hero p, .hero .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  padding: 15px 30px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* SECTION COMMON */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 36px;
+  font-weight: 600;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* HIGHLIGHTS */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.highlight-box {
+  width: 100%;
+  max-width: 250px;
+  margin: 0;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.highlight-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* COURSES */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.course-box {
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.course-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.course-box h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.course-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course-box li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.course-box li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* CONTACT */
+.contact p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 42px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .section {
+    padding: 60px 20px;
+  }
+  .section h2 {
+    font-size: 32px;
+  }
+  .courses {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .section {
+    padding: 50px 20px;
+  }
+  .section h2 {
+    font-size: 28px;
+  }
+  .highlights, .courses {
+    grid-template-columns: 1fr;
+  }
+  .highlight-box, .course-box {
+    max-width: 100%;
+  }
+  .social-icons {
+    gap: 20px;
+  }
+  .social-icons a {
+    padding: 10px;
+  }
+  .social-icons img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 15px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .section {
+    padding: 40px 15px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .highlight-box {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+  .course-box {
+    padding: 20px;
+  }
+  .course-box h3 {
+    font-size: 18px;
+  }
+  .course-box li {
+    font-size: 14px;
+  }
+  .cta h2 {
+    font-size: 32px;
+  }
+  .cta p {
+    font-size: 16px;
+  }
+  .contact p {
+    font-size: 14px;
+  }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+    line-height: 50px;
+  }
+  .header img {
+    height: 60px;
+  }
+  .social-icons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(45deg, #25D366, #20b858);
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.header img {
+  height: 80px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* FOLLOW US */
+.follow-us {
+  background: #f8f9fa;
+  padding: 60px 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.instagram span {
+  color: #E4405F;
+}
+
+.youtube span {
+  color: #FF0000;
+}
+
+/* FADE IN ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+    <!-- HEADER WITH LOGO -->
+<div class="header">
+  <img src="images/logo.jpg" alt="Madhuri Makeup Academy Logo">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Madhuri Makeup Academy</h1>
+  <p>Professional Makeup Training for Bridal, Fashion & Career Growth</p>
+  <a href="https://forms.gle/EUyCNHgaVdviDic66" class="btn">Enroll Now</a>
+  <a href="tel:+917045484226" class="btn">Call for Free Demo</a>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="section fade-in">
+  <h2>Why Choose Us?</h2>
+  <div class="highlights">
+    <div class="highlight-box">💄 Certified Professional Trainer</div>
+    <div class="highlight-box">🎓 Practical Hands-on Training</div>
+    <div class="highlight-box">👰 Bridal & Party Makeup</div>
+    <div class="highlight-box">📜 Certification Provided</div>
+    <div class="highlight-box">🏆 15+ Years Experience</div>
+
+  </div>
+</div>
+
+<!-- COURSES -->
+<!-- PROFESSIONAL COURSE DETAILS -->
+<div class="section fade-in" style="background:#fff5f8;">
+  <h2>Makeup & Hairstyle Professional Course</h2>
+  <p><strong>Duration:</strong> 60 Days</p>
+  <p><strong>Course Start Date:</strong> 17 January 2026</p>
+
+  <div class="courses">
+    <div class="course-box" style="text-align:left;">
+      <img src="images/makeup.jpg" alt="Makeup Course" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+      <h3>💋 Makeup Course (Basic to Advanced)</h3>
+      <ul>
+        <li>Basic to Advanced Makeup Training</li>
+        <li>Complete Product Knowledge</li>
+        <li>3 Live Demo Sessions</li>
+        <li>Waterproof Makeup Techniques</li>
+        <li>Glass Skin Makeup</li>
+        <li>Dark & Mature Skin Makeup</li>
+        <li>Eye Makeup – All Eye Variations</li>
+        <li>Makeup Theory (Skin, Face Shape, Color Knowledge)</li>
+      </ul>
+    </div>
+
+    <div class="course-box" style="text-align:left;">
+      <img src="images/hair.jpg" alt="Hairstyle Course" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+      <h3>💇 Hairstyle Course (Professional Level)</h3>
+      <ul>
+        <li>Deep Product Knowledge</li>
+        <li>Tips, Tricks & Styling Elements</li>
+        <li>Pulling, Spreading & Twisting Techniques</li>
+        <li>Front Hair Variations</li>
+        <li>Bridal Bun Variations</li>
+        <li>Quick & Party Hairstyles</li>
+        <li>High Do & Western Variations</li>
+        <li>Flower Setting</li>
+        <li>Mermaid & Open Hair Variations</li>
+      </ul>
+    </div>
+
+    <div class="course-box" style="text-align:left;">
+      <img src="images/makeup1.jpg" alt="Complimentary Course" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+      <h3>🎁 Complimentary (FREE)</h3>
+      <ul>
+        <li>Saree Draping</li>
+        <li>Career Motivation & Confidence Building</li>
+        <li>Social Media Handling (Instagram, Reels, Client Growth)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<div class="section fade-in">
+  <h2>About Madhuri Makeup Academy</h2>
+  <p>
+    Madhuri Makeup Academy is dedicated to empowering aspiring makeup artists
+    with professional skills, confidence, and real-world experience.  
+    Our focus is on practical learning and career-oriented training.
+  </p>
+</div>
+
+<!-- CTA -->
+<div class="cta section fade-in">
+  <h2>Start Your Makeup Career Today</h2>
+  <p>Join our academy and become a certified professional makeup artist.</p>
+  <a href="tel:+917045484226" class="btn">📞 Call Now</a>
+  <a href="https://wa.me/917045484226?text=Hello%20Madhuri%20Makeup%20Academy,%20I%20want%20to%20enquire%20about%20makeup%20courses" class="btn">💬 WhatsApp Us</a>
+  
+   
+
+</div>
+
+<!-- CONTACT -->
+<div class="section contact fade-in">
+  <h2>Contact Us</h2>
+  <p>📞 Phone:7045484226</p>
+  <p>📧 Email: madhurimakeupacademy@gmail.com</p>
+  <p>📍 Address: A - 104 , New SRA Building, Hanuman nagar, Near  Ayyappa temple, Akurli road Kandivali East Mumbai 400101</p>
+</div>
+
+
+  <!-- FOLLOW US -->
+<div class="section follow-us fade-in">
+  <h2>Follow Us</h2>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/madhuri_beautysalon"
+       target="_blank"
+       class="instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      <span>Instagram</span>
+    </a>
+
+    <a href="https://www.youtube.com/@MadhuriMakeupAcademy247"
+       target="_blank"
+       class="youtube">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      <span>YouTube</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  fadeElements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
